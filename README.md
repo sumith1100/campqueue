@@ -90,6 +90,6 @@ tests/            engine.test.ts, service.test.ts, ui.test.tsx
 - Wait-time estimates use a rolling weighted average of each station's actual service time.
 - `anonymiseCamp` strips patient PII after a camp ends, for privacy-conscious record-keeping — useful to mention in your report as a deliberate design decision.
 
-## Notes for the VTU report
+## Notes for the report
 
 This build deliberately favours boring, well-understood tech over hype: SQLite instead of a hosted DB (no infra to explain or fail during a demo), SSE instead of websockets (simpler, sufficient for one-way live updates), and a pure `engine.ts` module so the core queueing algorithm can be unit-tested and explained independently of the framework. Happy to help turn this into an architecture diagram, ER diagram, or a written report/abstract next.
