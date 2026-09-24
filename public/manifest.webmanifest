@@ -1,0 +1,10 @@
+{
+  "name": "CampQueue",
+  "short_name": "CampQueue",
+  "description": "Digital queue and token management for health camps",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#edf2f0",
+  "theme_color": "#0b6e6e",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
