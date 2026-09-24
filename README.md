@@ -1,6 +1,6 @@
 # CampQueue
 
-A token-based digital queue and appointment management system for health camps — built as a VTU project (VTU/PCC-PEC-O).
+A token-based digital queue and appointment management system for health camps —.
 
 Patients register (walk-in or pre-booked slot), get a live-updating token with an estimated wait, and are called station-by-station (screening → general → pharmacy, plus standalone eye/dental) through a public display board and SMS. Staff and organisers get a console for calling/serving patients and an admin dashboard for setup, analytics, and CSV export.
 
