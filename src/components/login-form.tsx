@@ -26,6 +26,7 @@ export function LoginForm({ next, users }: { next: string; users: User[] }) {
         <span className="font-semibold">Name</span>
         <select name="userId" className="field" required autoFocus defaultValue="">
           <option value="" disabled>Select your name</option>
+          <option value="admin">Administrator</option>
           {users.map((user) => <option key={user.id} value={user.id}>{user.name} — {user.designation}</option>)}
         </select>
       </label>
