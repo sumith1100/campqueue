@@ -14,7 +14,17 @@ export const registerSchema = z.object({
   desk: z.boolean().optional(),
 });
 
-export const loginSchema = z.object({ pin: z.string().min(1).max(64) });
+export const loginSchema = z.object({
+  userId: z.string().uuid().optional(),
+  pin: z.string().regex(/^\d{4,6}$/, "PIN must be 4-6 digits"),
+});
+export const userCreateSchema = z.object({
+  name: z.string().trim().min(2, "Enter the full name").max(80),
+  designation: z.string().trim().min(2, "Enter a designation").max(80),
+  role: z.enum(["staff", "volunteer"]).default("volunteer"),
+  pin: z.string().regex(/^\d{4,6}$/, "PIN must be 4-6 digits"),
+});
+export const userStatusSchema = z.object({ active: z.boolean() });
 
 export const callSchema = z.object({ counter: z.coerce.number().int().min(1).max(20).default(1) });
 
