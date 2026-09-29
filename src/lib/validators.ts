@@ -15,7 +15,7 @@ export const registerSchema = z.object({
 });
 
 export const loginSchema = z.object({
-  userId: z.string().uuid().optional(),
+  userId: z.union([z.string().uuid(), z.literal("admin")]).optional(),
   pin: z.string().regex(/^\d{4,6}$/, "PIN must be 4-6 digits"),
 });
 export const userCreateSchema = z.object({
