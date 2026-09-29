@@ -2,12 +2,7 @@
   "version": "7",
   "dialect": "sqlite",
   "entries": [
-    {
-      "idx": 0,
-      "version": "6",
-      "when": 1789988379775,
-      "tag": "0000_bizarre_unus",
-      "breakpoints": true
-    }
+    { "idx": 0, "version": "6", "when": 1789988379775, "tag": "0000_bizarre_unus", "breakpoints": true },
+    { "idx": 1, "version": "7", "when": 1790676000000, "tag": "0001_staff_accounts", "breakpoints": true }
   ]
 }
