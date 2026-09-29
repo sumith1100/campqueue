@@ -2,6 +2,21 @@ import { index, integer, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqli
 
 /** All timestamps are stored as epoch milliseconds. */
 
+export const users = sqliteTable(
+  "users",
+  {
+    id: text("id").primaryKey(),
+    name: text("name").notNull(),
+    designation: text("designation").notNull(),
+    role: text("role", { enum: ["staff", "volunteer"] }).notNull(),
+    pinHash: text("pin_hash").notNull(),
+    active: integer("active", { mode: "boolean" }).notNull().default(true),
+    createdAt: integer("created_at").notNull(),
+    updatedAt: integer("updated_at").notNull(),
+  },
+  (t) => [index("users_active").on(t.active), index("users_name").on(t.name)],
+);
+
 export const camps = sqliteTable("camps", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   slug: text("slug").notNull().unique(),
