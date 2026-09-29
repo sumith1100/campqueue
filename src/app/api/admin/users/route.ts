@@ -12,8 +12,7 @@ export function POST(req: Request) {
   return handle(async () => {
     const denied = await requireRole("admin");
     if (denied) return denied;
-    const input = userCreateSchema.parse(await readJson(req));
-    const user = createUser(input);
+    const user = createUser(userCreateSchema.parse(await readJson(req)));
     return json({ user }, 201);
   });
 }
