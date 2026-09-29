@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, type FormEvent } from "react";
 import { postJson } from "@/components/live";
 
 type User = {
@@ -28,7 +28,7 @@ export function StaffManagement({ initial }: { initial: User[] }) {
     setUsers(data.users);
   }
 
-  async function create(e: React.FormEvent) {
+  async function create(e: FormEvent) {
     e.preventDefault();
     setBusy(true);
     setMessage(null);
