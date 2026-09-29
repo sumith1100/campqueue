@@ -18,6 +18,7 @@ interface Props {
   camp: { slug: string; name: string; graceMinutes: number };
   stations: { id: number; name: string; color: string; counters: number; nextStationId: number | null }[];
   initial: CampSnapshot;
+  staff?: { name: string; designation: string };
 }
 
 const REASON: Record<PriorityReason, string | null> = {
@@ -97,7 +98,7 @@ export function StaffConsole({ camp, stations, initial }: Props) {
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-3xl font-bold">{camp.name}</h1>
-          <p className="text-ink-soft">Volunteer console</p>
+          <p className="text-ink-soft">{staff?.designation ? `${staff.name} · ${staff.designation}` : "Volunteer console"}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <LivePill live={live} />
